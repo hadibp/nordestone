@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000; // Change the port number if needed
+const port = process.env.PORT || 3000; // Change the port number if needed
 
 app.use(express.urlencoded({ extended: true }));
 // parse application/json
@@ -16,7 +16,6 @@ app.post("/calculate", (req, res) => {
   let result;
   const { num1, num2, operator } = req.body;
 
-
   if (operator === "add") {
     result = Number(num1) + Number(num2);
   } else if (operator === "subtract") {
@@ -24,6 +23,7 @@ app.post("/calculate", (req, res) => {
   } else if (operator === "multiply") {
     result = Number(num1) * Number(num2);
   }
+  console.log(result);
   res.json({ result });
 });
 
