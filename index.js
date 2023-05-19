@@ -23,6 +23,9 @@ app.post("/calculate", (req, res) => {
   } else if (operator === "multiply") {
     result = Number(num1) * Number(num2);
   }
+   else if (operator === "division") {
+    result = Number(num1) * Number(num2);
+  }
   console.log(result);
   res.json({ result });
 });
