@@ -24,7 +24,7 @@ app.post("/calculate", (req, res) => {
     result = Number(num1) * Number(num2);
   }
    else if (operator === "division") {
-    result = Number(num1) * Number(num2);
+    result = Number(num1) / Number(num2);
   }
   console.log(result);
   res.json({ result });
